@@ -35,15 +35,6 @@ public class ControlJuego {
 	 * 			El resto de posiciones que no son minas guardan en el entero cuántas minas hay alrededor de la celda
 	 */
 	public void inicializarPartida(){
-		//Borro del tablero la información que pudiera haber anteriormente (los pongo todos a cero):
-
-		//Me creo LADO_TABLERO*LADO_TABLERO números en un array list, uno para cada una de las posiciones del tablero:
-
-		//Saco 20 posiciones sin repetir del array y les coloco una mina en el tablero:
-
-		//Calculo para todas las posiciones que no tienen minas, cuántas minas hay alrededor.
-		
-		//Pongo la puntuación a cero:
 
 		
 	}
