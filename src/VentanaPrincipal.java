@@ -144,7 +144,7 @@ public class VentanaPrincipal {
 	
 	
 	/**
-	 * Método que pinta en la pantalla el número de minas que hay alrededor de la celda
+	 * Pinta en la pantalla el número de minas que hay alrededor de la celda
 	 * Saca el botón que haya en la celda determinada y añade un JLabel centrado y no editable con el número de minas alrededor.
 	 * Se pinta el color del texto según la siguiente correspondecia (consultar la variable correspondeciaColor):
 	 * - 0 : negro
@@ -161,7 +161,7 @@ public class VentanaPrincipal {
 	
 	
 	/**
-	 * Método que muestra una ventana que muestra el fin del juego
+	 * Muestra una ventana que indica el fin del juego
 	 * @param porExplosion : Un booleano que indica si es final del juego porque ha explotado una mina (true) o bien porque hemos desactivado todas (false) 
 	 * @post : Todos los botones se desactivan excepto el de volver a iniciar el juego.
 	 */
