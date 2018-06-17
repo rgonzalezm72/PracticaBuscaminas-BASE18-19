@@ -42,9 +42,9 @@ public class ControlJuego {
 	/**Cálculo de las minas adjuntas:
 	 * Para calcular el número de minas tenemos que tener en cuenta que no nos salimos nunca del tablero.
 	 * Por lo tanto, como mucho la i y la j valdrán LADO_TABLERO-1.
-	 * Por lo tanto, como mucho la i y la j valdrán como poco 0.
-	 * @param i: posición verticalmente de la casilla a rellenar
-	 * @param j: posición horizontalmente de la casilla a rellenar
+	 * Por lo tanto, como poco la i y la j valdrán 0.
+	 * @param i: posición vertical de la casilla a rellenar
+	 * @param j: posición horizontal de la casilla a rellenar
 	 * @return : El número de minas que hay alrededor de la casilla [i][j]
 	 **/
 	private int calculoMinasAdjuntas(int i, int j){
