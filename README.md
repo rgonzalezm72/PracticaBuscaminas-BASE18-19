@@ -1,7 +1,7 @@
 BASE PARA EL BUSCAMINAS: (Nombre alumno)
 =========================
 
-En este programa se encuentra la base para el ejercicio 35 de Desarrollo de intefaces.
+En este programa se encuentra la base para el Buscaminas de Desarrollo de intefaces (DAM2).
 
 Pasos
 -----
