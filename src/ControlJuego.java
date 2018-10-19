@@ -36,10 +36,21 @@ public class ControlJuego {
 	 */
 	public void inicializarPartida(){
 
+		//TODO: Repartir minas e inicializar puntaci�n. Si hubiese un tablero anterior, lo pongo todo a cero para inicializarlo.
 		
+		
+		
+		//Al final del m�todo hay que guardar el n�mero de minas para las casillas que no son mina:
+		for (int i = 0; i < tablero.length; i++) {
+			for (int j = 0; j < tablero[i].length; j++) {
+				if (tablero[i][j] != MINA){
+					tablero[i][j] = calculoMinasAdjuntas(i,j);
+				}
+			}
+		}
 	}
 	
-	/**Cálculo de las minas adjuntas:
+	/**Cálculo de las minas adjuntas: 
 	 * Para calcular el número de minas tenemos que tener en cuenta que no nos salimos nunca del tablero.
 	 * Por lo tanto, como mucho la i y la j valdrán LADO_TABLERO-1.
 	 * Por lo tanto, como poco la i y la j valdrán 0.
@@ -53,7 +64,7 @@ public class ControlJuego {
 	
 	/**
 	 * Método que nos permite 
-	 * @pre : La casilla nunca debe haber sido abierta antes, no es controlado por el GestorJuego. Por lo tanto siempre sumaremos puntos
+	 * @pre : La casilla nunca debe haber sido abierta antes, no es controlado por el ControlJuego. Por lo tanto siempre sumaremos puntos
 	 * @param i: posición verticalmente de la casilla a abrir
 	 * @param j: posición horizontalmente de la casilla a abrir
 	 * @return : Verdadero si no ha explotado una mina. Falso en caso contrario.
