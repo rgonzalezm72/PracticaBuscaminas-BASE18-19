@@ -19,7 +19,6 @@ public class ControlJuego {
 	private int [][] tablero;
 	private int puntuacion;
 	
-	
 	public ControlJuego() {
 		//Creamos el tablero:
 		tablero = new int[LADO_TABLERO][LADO_TABLERO];
@@ -35,9 +34,18 @@ public class ControlJuego {
 	 * 			El resto de posiciones que no son minas guardan en el entero cuÃ¡ntas minas hay alrededor de la celda
 	 */
 	public void inicializarPartida(){
-
+        Random rd = new Random();
+	    int cont = 0;
 		//TODO: Repartir minas e inicializar puntación. Si hubiese un tablero anterior, lo pongo todo a cero para inicializarlo.
-		
+		for (int i = 0; i < tablero.length; i++) {
+			for (int j = 0; j < tablero.length; j++) {
+				do {
+				tablero[rd.nextInt()][rd.nextInt()] = MINA;
+				cont++;
+				}while(cont<=MINAS_INICIALES);
+				puntuacion = 0;
+			}
+		}
 		
 		
 		//Al final del método hay que guardar el número de minas para las casillas que no son mina:
