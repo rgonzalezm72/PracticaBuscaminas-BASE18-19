@@ -73,11 +73,48 @@ public class ControlJuego {
 	 * @return : El número de minas que hay alrededor de la casilla [i][j]
 	 **/
 	private int calculoMinasAdjuntas(int i, int j) {
-		int valor = 0;
-		if (tablero[i][j] == MINA) {
-			
+		int cantidadMinas = 0;
+		if (i-1>=0 && j-1>=0) {
+			if(tablero[i][j] == MINA) {
+				cantidadMinas++;
+			}
 		}
-		return valor;
+		if (i+1>=0 && j-1>=0) {
+			if(tablero[i][j] == MINA) {
+				cantidadMinas++;
+			}
+		}
+		if (i-1>=0 && j+1>=0) {
+			if(tablero[i][j] == MINA) {
+				cantidadMinas++;
+			}
+		}
+		if (i+1>=0 && j+1>=0) {
+			if(tablero[i][j] == MINA) {
+				cantidadMinas++;
+			}
+		}
+		if (i-1>=0) {
+			if(tablero[i][j] == MINA) {
+				cantidadMinas++;
+			}
+		}
+		if (j-1>=0) {
+			if(tablero[i][j] == MINA) {
+				cantidadMinas++;
+			}
+		}
+		if (i+1<LADO_TABLERO) {
+			if(tablero[i][j] == MINA) {
+				cantidadMinas++;
+			}
+		}
+		if (j+1<LADO_TABLERO) {
+			if(tablero[i][j] == MINA) {
+				cantidadMinas++;
+			}
+		}
+		return cantidadMinas++;
 	}
 
 	/**
@@ -92,7 +129,7 @@ public class ControlJuego {
 	 * @return : Verdadero si no ha explotado una mina. Falso en caso contrario.
 	 */
 	public boolean abrirCasilla(int i, int j) {
-
+		
 	}
 
 	/**
