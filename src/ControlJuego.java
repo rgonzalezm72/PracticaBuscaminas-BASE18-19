@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.text.TabableView;
+
 /**
  * Clase gestora del tablero de juego. Guarda una matriz de enteros representado
  * el tablero. Si hay una mina en una posici√≥n guarda el n√∫mero -1 Si no hay
@@ -38,15 +40,16 @@ public class ControlJuego {
 	public void inicializarPartida() {
 		Random rd = new Random();
 		int cont = 0;
-		int aleatorio = rd.nextInt();
 		// TODO: Repartir minas e inicializar puntaciÛn. Si hubiese un tablero anterior,
 		// lo pongo todo a cero para inicializarlo.
 		do {
-			if (tablero[aleatorio][aleatorio] != MINA) {
-				tablero[aleatorio][aleatorio] = MINA;
+			int aleatorio1 = rd.nextInt(LADO_TABLERO);
+			int aleatorio2 = rd.nextInt(LADO_TABLERO);
+			if (tablero[aleatorio1][aleatorio2] != MINA) {
+				tablero[aleatorio1][aleatorio2] = MINA;	
 			}
 			cont++;
-		} while (cont <= MINAS_INICIALES);
+		} while (cont <= MINAS_INICIALES+2);
 		puntuacion = 0;
 
 		// Al final del mÈtodo hay que guardar el n˙mero de minas para las casillas que
@@ -57,7 +60,7 @@ public class ControlJuego {
 					tablero[i][j] = calculoMinasAdjuntas(i, j);
 				}
 			}
-		}
+		} 
 	}
 
 	/**
@@ -74,47 +77,50 @@ public class ControlJuego {
 	 **/
 	private int calculoMinasAdjuntas(int i, int j) {
 		int cantidadMinas = 0;
-		if (i-1>=0 && j-1>=0) {
-			if(tablero[i][j] == MINA) {
-				cantidadMinas++;
+		for (i = 0; i < LADO_TABLERO; i++) {
+			for (j = 0; j < LADO_TABLERO; j++) {
+				cantidadMinas = 0;
+				if(tablero[i][j]!=MINA) {
+					if( i!=0 && j!=0 && i!=LADO_TABLERO-1 && j!=LADO_TABLERO-1) {
+						if (tablero[i][j-1]==MINA){
+							cantidadMinas++;
+			                 }
+			                 if (tablero[i-1][j-1]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (tablero[i+1][j-1]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (tablero[i][j+1]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (tablero[i+1][j+1]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (tablero[i-1][j+1]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (tablero[i+1][j]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (tablero[i-1][j]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (tablero[i-1][LADO_TABLERO-1]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (tablero[LADO_TABLERO-1][j-1]==MINA){
+			                	 cantidadMinas++;
+			                 }
+			                 if (cantidadMinas!=0){
+			                	 tablero[i][j]=cantidadMinas;
+			              } 
+					}
+				}
 			}
 		}
-		if (i+1>=0 && j-1>=0) {
-			if(tablero[i][j] == MINA) {
-				cantidadMinas++;
-			}
-		}
-		if (i-1>=0 && j+1>=0) {
-			if(tablero[i][j] == MINA) {
-				cantidadMinas++;
-			}
-		}
-		if (i+1>=0 && j+1>=0) {
-			if(tablero[i][j] == MINA) {
-				cantidadMinas++;
-			}
-		}
-		if (i-1>=0) {
-			if(tablero[i][j] == MINA) {
-				cantidadMinas++;
-			}
-		}
-		if (j-1>=0) {
-			if(tablero[i][j] == MINA) {
-				cantidadMinas++;
-			}
-		}
-		if (i+1<LADO_TABLERO) {
-			if(tablero[i][j] == MINA) {
-				cantidadMinas++;
-			}
-		}
-		if (j+1<LADO_TABLERO) {
-			if(tablero[i][j] == MINA) {
-				cantidadMinas++;
-			}
-		}
-		return cantidadMinas++;
+		
+		return cantidadMinas;
 	}
 
 	/**
@@ -186,6 +192,7 @@ public class ControlJuego {
 	 * @return Un entero que representa el n√∫mero de minas alrededor de la celda
 	 */
 	public int getMinasAlrededor(int i, int j) {
+		return tablero[i][j];
 	}
 
 	/**
