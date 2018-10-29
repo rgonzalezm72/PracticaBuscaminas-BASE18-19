@@ -13,7 +13,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-
+/**
+ * Clase que gestiona todo el juego. Guarda todos los componentes de la interfaz que enlazan a las otras clases
+ * @link {@link #inicializar()}
+ * {@code #inicializar()}
+ * @author rgonzalezm72
+ * @version 0.2
+ * @since 0.1
+ * @see ControlJuego
+ */
 public class VentanaPrincipal {
 
 	//La ventana principal, en este caso, guarda todos los componentes:
