@@ -16,7 +16,9 @@ import javax.swing.SwingConstants;
 /**
  * Clase que gestiona todo el juego. Guarda todos los componentes de la interfaz que enlazan a las otras clases
  * @link {@link #inicializar()}
- * {@code #inicializar()}
+ * {@code ventana.setVisible(true);
+		  inicializarComponentes();	
+		  inicializarListeners();}
  * @author rgonzalezm72
  * @version 0.2
  * @since 0.1
