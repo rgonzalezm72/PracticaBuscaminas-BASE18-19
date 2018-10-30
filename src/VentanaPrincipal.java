@@ -15,7 +15,7 @@ import javax.swing.SwingConstants;
 
 /**
  * Clase que gestiona todo el juego. Guarda todos los componentes de la interfaz que enlazan a las otras clases
- * @link {@link #inicializar()}
+ * {@link #inicializar()}
  * {@code ventana.setVisible(true);
 		  inicializarComponentes();	
 		  inicializarListeners();}
@@ -184,8 +184,8 @@ public class VentanaPrincipal {
 	
 	/**
 	 * Muestra una ventana que indica el fin del juego
-	 * @param porExplosion : Un booleano que indica si es final del juego porque ha explotado una mina (true) o bien porque hemos desactivado todas (false) 
-	 * @post : Todos los botones se desactivan excepto el de volver a iniciar el juego.
+	 * @param porExplosion : Un booleano que indica si es final del juego porque ha explotado una mina (true) o bien porque hemos desactivado todas (false)
+	 * @post: Todos los botones se desactivan excepto el de volver a iniciar el juego.
 	 */
 	public void mostrarFinJuego(boolean porExplosion) {
 		
